@@ -7,6 +7,10 @@
 [Dd]ist/
 [Pp]ublish/
 
+# The website source is intentionally committed for GitHub Pages.
+!website/dist/
+!website/dist/**
+
 # NuGet packages and restore caches
 packages/
 .packages/
@@ -36,6 +40,9 @@ coverage.*
 .localappdata/
 .appdata/
 .publish-appdata/
+.sites-runtime/
+.sites-checkout/
+.sites-checkout-*/
 
 # Logs, temporary files and crash dumps
 *.log

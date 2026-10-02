@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://th3al3x.github.io/Pinguin-Anti-Scan/sitemap.xml

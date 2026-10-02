@@ -6,6 +6,8 @@
 
 <p align="center"><strong>Less scanning. More penguin.</strong></p>
 
+<p align="center"><a href="https://th3al3x.github.io/Pinguin-Anti-Scan/"><strong>Website</strong></a> · <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest">Download</a></p>
+
 <p align="center">
   <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/actions/workflows/release.yml"><img src="https://github.com/TH3AL3X/Pinguin-Anti-Scan/actions/workflows/release.yml/badge.svg" alt="Build and release status"></a>
   <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest"><img src="https://img.shields.io/github/v/release/TH3AL3X/Pinguin-Anti-Scan" alt="Latest release"></a>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penguin Anti-Scan — Stop Windows Wi-Fi Background Scans</title>
+  <meta name="description" content="A tiny portable Windows tray app that blocks periodic Wi-Fi background scans without disconnecting you. One EXE, no installer, no custom driver.">
+  <meta name="keywords" content="Wi-Fi background scan blocker, Windows ping spikes, WLAN latency, disable Wi-Fi scanning, Penguin Anti-Scan">
+  <meta name="theme-color" content="#080b14">
+  <meta property="og:title" content="Penguin Anti-Scan">
+  <meta property="og:description" content="Less scanning. More penguin. A portable Windows utility for blocking periodic Wi-Fi background scans.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://th3al3x.github.io/Pinguin-Anti-Scan/">
+  <link rel="canonical" href="https://th3al3x.github.io/Pinguin-Anti-Scan/">
+  <link rel="icon" href="assets/penguin-anti-scan.ico" sizes="any">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Penguin Anti-Scan home">
+      <img src="assets/penguin-anti-scan.png" alt="" width="42" height="42">
+      <span>Penguin Anti-Scan</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-github" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Windows Wi-Fi utility</div>
+        <h1 id="hero-title">Tell Windows to stop <em>sniffing around.</em></h1>
+        <p class="hero-lead">Penguin Anti-Scan blocks periodic background Wi-Fi scans while you stay connected. Open the Windows Wi-Fi panel whenever you actually want to search.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe">Download for Windows</a>
+          <a class="button button-secondary" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">View source</a>
+        </div>
+        <p class="download-note"><span data-version>Latest release</span> · One portable EXE · No installer · No custom driver</p>
+      </div>
+
+      <div class="hero-visual" aria-label="Penguin Anti-Scan mascot and protection status">
+        <div class="orbit orbit-one" aria-hidden="true"></div>
+        <div class="orbit orbit-two" aria-hidden="true"></div>
+        <img class="mascot" src="assets/penguin-anti-scan.png" alt="A determined penguin stopping a crossed-out Wi-Fi signal" width="520" height="520">
+        <div class="status-card">
+          <div class="status-topline"><span class="status-dot"></span> Penguin on guard</div>
+          <div class="status-adapter">Protecting: <strong>Wi-Fi 3</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Product highlights">
+      <div><strong>~1 MB</strong><span>Tiny download</span></div>
+      <div><strong>1 file</strong><span>Nothing to install</span></div>
+      <div><strong>Native API</strong><span>No mystery driver</span></div>
+      <div><strong>Open source</strong><span>Read every line</span></div>
+    </section>
+
+    <section class="section" id="how-it-works" aria-labelledby="how-title">
+      <div class="section-heading">
+        <span class="kicker">Simple by design</span>
+        <h2 id="how-title">Windows scans less. You stay connected.</h2>
+        <p>The app changes one focused WLAN setting and keeps the request active from the system tray.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>Pick your adapter</h3>
+          <p>Select the Wi-Fi adapter you use. Penguin remembers it for next time.</p>
+        </article>
+        <article class="step-card featured">
+          <span class="step-number">02</span>
+          <h3>Background scans stop</h3>
+          <p>Once connected, periodic Windows scanning is disabled through the Native Wi-Fi API.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>Scan when you ask</h3>
+          <p>Open the Windows Wi-Fi panel when you want to look for networks. On-demand discovery remains available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section">
+      <div class="split-copy">
+        <span class="kicker">Honest little utility</span>
+        <h2>One job. No nonsense.</h2>
+        <p>Penguin Anti-Scan does not promise magical internet. It targets one possible source of Wi-Fi latency spikes: periodic background network scans.</p>
+        <ul class="check-list">
+          <li>Does not turn off the Wi-Fi radio</li>
+          <li>Does not intentionally disconnect your network</li>
+          <li>Does not install a custom driver or service</li>
+          <li>Restores normal scanning when you exit safely</li>
+        </ul>
+      </div>
+
+      <div class="terminal" aria-label="Example application status">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>penguin-status</b></div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> adapter</p>
+          <p class="response">Wi-Fi 3</p>
+          <p><span class="prompt">$</span> background_scan</p>
+          <p class="response success">disabled</p>
+          <p><span class="prompt">$</span> penguin</p>
+          <p class="response">on guard 🐧</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading compact">
+        <span class="kicker">Good questions</span>
+        <h2 id="faq-title">Before you let a penguin near your Wi-Fi</h2>
+      </div>
+      <div class="faq-grid">
+        <details>
+          <summary>Can it fix Wi-Fi ping spikes?</summary>
+          <p>It may help when the spikes come from periodic WLAN scans or roaming behavior. It cannot fix congestion, interference, weak signal, router issues, or bufferbloat.</p>
+        </details>
+        <details>
+          <summary>Why does it need administrator access?</summary>
+          <p>Windows restricts changes to wireless interface settings. The app requests elevation only when it starts.</p>
+        </details>
+        <details>
+          <summary>How do I know it is working?</summary>
+          <p>The green “Penguin on guard” state appears only after Windows reports that background scanning is disabled.</p>
+        </details>
+        <details>
+          <summary>What happens when I close the window?</summary>
+          <p>It stays active in the system tray. Choose “Exit and restore Wi-Fi” from the tray menu to quit and restore normal scanning.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <img src="assets/penguin-anti-scan.png" alt="" width="96" height="96">
+      <div>
+        <span class="kicker">Ready when you are</span>
+        <h2>Less scanning. More penguin.</h2>
+      </div>
+      <a class="button button-primary" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe">Download latest release</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand">
+      <img src="assets/penguin-anti-scan.png" alt="" width="34" height="34">
+      <span>Penguin Anti-Scan</span>
+    </div>
+    <p>Built for Windows. Open source on <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">GitHub</a>.</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
