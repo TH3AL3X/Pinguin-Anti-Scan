@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>PenguinAntiScan</AssemblyName>
+    <RootNamespace>ScannerDisabler</RootNamespace>
+    <ApplicationTitle>Penguin Anti-Scan</ApplicationTitle>
+    <AssemblyTitle>Penguin Anti-Scan</AssemblyTitle>
+    <Product>Penguin Anti-Scan</Product>
+    <Description>Portable Windows utility that blocks periodic Wi-Fi background scans.</Description>
+    <Company>Penguin Anti-Scan</Company>
+    <ApplicationIcon>Assets\penguin-anti-scan.ico</ApplicationIcon>
+    <Version>1.4.0</Version>
+    <LangVersion>latest</LangVersion>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateSupportedRuntime>false</GenerateSupportedRuntime>
+    <!-- Explicit values keep builds independent from per-user Windows SDK discovery. -->
+    <TargetPlatformMoniker>Windows,Version=7.0</TargetPlatformMoniker>
+    <TargetPlatformDisplayName>Windows</TargetPlatformDisplayName>
+    <TargetPlatformSdkPath>$(MSBuildProgramFiles32)\Windows Kits\10\</TargetPlatformSdkPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\penguin-anti-scan.png" />
+  </ItemGroup>
+</Project>

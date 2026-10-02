@@ -1,0 +1,55 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rtifacts/
+[Dd]ist/
+[Pp]ublish/
+
+# NuGet packages and restore caches
+packages/
+.packages/
+.nuget/
+*.nupkg
+*.snupkg
+
+# Visual Studio, VS Code and JetBrains files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# Test and coverage output
+[Tt]est[Rr]esult*/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# Local build/sandbox state
+.buildhome/
+.localappdata/
+.appdata/
+.publish-appdata/
+
+# Logs, temporary files and crash dumps
+*.log
+*.tmp
+*.temp
+*.dmp
+*.stackdump
+
+# Signing secrets
+*.pfx
+*.p12
+*.snk
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
