@@ -7,9 +7,7 @@
 [Dd]ist/
 [Pp]ublish/
 
-# The website source is intentionally committed for GitHub Pages.
-!website/dist/
-!website/dist/**
+# The website is published directly from /docs by GitHub Pages.
 
 # NuGet packages and restore caches
 packages/
