@@ -7,6 +7,11 @@
 <p align="center"><strong>Less scanning. More penguin.</strong></p>
 
 <p align="center">
+  <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/actions/workflows/release.yml"><img src="https://github.com/TH3AL3X/Pinguin-Anti-Scan/actions/workflows/release.yml/badge.svg" alt="Build and release status"></a>
+  <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest"><img src="https://img.shields.io/github/v/release/TH3AL3X/Pinguin-Anti-Scan" alt="Latest release"></a>
+</p>
+
+<p align="center">
   A tiny Windows system-tray utility that disables periodic background Wi-Fi scans while you are connected, without disabling Wi-Fi or preventing on-demand network searches.
 </p>
 
@@ -77,6 +82,27 @@ The self-contained single-file build is written to:
 ```text
 bin\Release\net48\PenguinAntiScan.exe
 ```
+
+## Automated releases
+
+Every push to `main` checks the `<Version>` value in `ScannerDisabler.csproj`. If that version does not already have a GitHub Release, GitHub Actions automatically:
+
+1. Builds the project on a Windows runner.
+2. Verifies that the output contains only `PenguinAntiScan.exe`.
+3. Verifies that the executable version matches the project version.
+4. Creates the corresponding `vX.Y.Z` tag and GitHub Release.
+5. Attaches the portable executable and includes its SHA-256 checksum.
+
+To publish a new version:
+
+```powershell
+.\tools\set-version.ps1 1.4.1
+git add .
+git commit -m "Release v1.4.1"
+git push
+```
+
+If the version already has a release, the workflow exits without publishing a duplicate. You can also run it manually from the repository's **Actions** tab.
 
 ## FAQ
 
