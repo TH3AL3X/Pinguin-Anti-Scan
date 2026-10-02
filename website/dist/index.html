@@ -6,9 +6,9 @@
   <title>Penguin Anti-Scan — Stop Windows Wi-Fi Background Scans</title>
   <meta name="description" content="A tiny portable Windows tray app that blocks periodic Wi-Fi background scans without disconnecting you. One EXE, no installer, no custom driver.">
   <meta name="keywords" content="Wi-Fi background scan blocker, Windows ping spikes, WLAN latency, disable Wi-Fi scanning, Penguin Anti-Scan">
-  <meta name="theme-color" content="#080b14">
+  <meta name="theme-color" content="#05070b">
   <meta property="og:title" content="Penguin Anti-Scan">
-  <meta property="og:description" content="Less scanning. More penguin. A portable Windows utility for blocking periodic Wi-Fi background scans.">
+  <meta property="og:description" content="Windows keeps scanning. The penguin says no.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://th3al3x.github.io/Pinguin-Anti-Scan/">
   <link rel="canonical" href="https://th3al3x.github.io/Pinguin-Anti-Scan/">
@@ -16,144 +16,146 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-glow" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
+  <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="Penguin Anti-Scan home">
-      <img src="assets/penguin-anti-scan.png" alt="" width="42" height="42">
-      <span>Penguin Anti-Scan</span>
+      <span class="brand-mark"><img src="assets/penguin-anti-scan.png" alt="" width="38" height="38"></span>
+      <span class="brand-copy"><strong>Penguin</strong><small>Anti-Scan</small></span>
     </a>
     <nav aria-label="Main navigation">
-      <a href="#how-it-works">How it works</a>
+      <a href="#how">How it works</a>
+      <a href="#under-the-hood">Under the hood</a>
       <a href="#faq">FAQ</a>
-      <a class="nav-github" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
+    <a class="header-github" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">GitHub</a>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-noise" aria-hidden="true"></div>
       <div class="hero-copy">
-        <div class="eyebrow"><span></span> Windows Wi-Fi utility</div>
-        <h1 id="hero-title">Tell Windows to stop <em>sniffing around.</em></h1>
-        <p class="hero-lead">Penguin Anti-Scan blocks periodic background Wi-Fi scans while you stay connected. Open the Windows Wi-Fi panel whenever you actually want to search.</p>
+        <div class="availability"><span></span> Free · Source available · Windows</div>
+        <h1 id="hero-title"><span>Windows keeps</span><strong>scanning.</strong><em>The penguin says no.</em></h1>
+        <p>Block periodic Wi-Fi background scans without killing your connection. When you actually need networks, open the Windows Wi-Fi panel and scan on demand.</p>
         <div class="hero-actions">
-          <a class="button button-primary" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe">Download for Windows</a>
-          <a class="button button-secondary" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">View source</a>
+          <a class="button button-download" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe">
+            <span>Download for Windows</span>
+            <small data-version>Latest release</small>
+          </a>
+          <a class="button button-ghost" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">Read the source</a>
         </div>
-        <p class="download-note"><span data-version>Latest release</span> · One portable EXE · No installer · No custom driver</p>
+        <div class="micro-proof"><span>ONE .EXE</span><i></i><span>NO INSTALLER</span><i></i><span>NO CUSTOM DRIVER</span></div>
       </div>
 
-      <div class="hero-visual" aria-label="Penguin Anti-Scan mascot and protection status">
-        <div class="orbit orbit-one" aria-hidden="true"></div>
-        <div class="orbit orbit-two" aria-hidden="true"></div>
-        <img class="mascot" src="assets/penguin-anti-scan.png" alt="A determined penguin stopping a crossed-out Wi-Fi signal" width="520" height="520">
-        <div class="status-card">
-          <div class="status-topline"><span class="status-dot"></span> Penguin on guard</div>
-          <div class="status-adapter">Protecting: <strong>Wi-Fi 3</strong></div>
+      <div class="hero-stage" aria-label="Penguin Anti-Scan protection visualization">
+        <div class="radar" aria-hidden="true">
+          <span class="radar-ring ring-1"></span><span class="radar-ring ring-2"></span><span class="radar-ring ring-3"></span><span class="radar-sweep"></span>
         </div>
+        <div class="blocked-stamp" aria-hidden="true"><span>BACKGROUND SCANS</span><strong>BLOCKED</strong></div>
+        <img class="hero-penguin" src="assets/penguin-anti-scan.png" alt="A determined penguin blocking a Wi-Fi scan" width="620" height="620">
+        <div class="floating-card card-status"><span class="pulse-dot"></span><div><small>STATUS</small><strong>ON GUARD</strong></div></div>
+        <div class="floating-card card-adapter"><small>SELECTED ADAPTER</small><strong>Wi-Fi 3</strong><span>Remembered ✓</span></div>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Product highlights">
-      <div><strong>~1 MB</strong><span>Tiny download</span></div>
-      <div><strong>1 file</strong><span>Nothing to install</span></div>
-      <div><strong>Native API</strong><span>No mystery driver</span></div>
-      <div><strong>Open source</strong><span>Read every line</span></div>
-    </section>
+    <div class="ticker" aria-hidden="true">
+      <div><span>NO PERIODIC SCANS</span><b>✦</b><span>STAY CONNECTED</span><b>✦</b><span>SCAN ON DEMAND</span><b>✦</b><span>NO PERIODIC SCANS</span><b>✦</b><span>STAY CONNECTED</span><b>✦</b><span>SCAN ON DEMAND</span></div>
+    </div>
 
-    <section class="section" id="how-it-works" aria-labelledby="how-title">
-      <div class="section-heading">
-        <span class="kicker">Simple by design</span>
-        <h2 id="how-title">Windows scans less. You stay connected.</h2>
-        <p>The app changes one focused WLAN setting and keeps the request active from the system tray.</p>
+    <section class="demo-section" id="how" aria-labelledby="demo-title">
+      <div class="section-intro reveal">
+        <span class="section-index">01 / SEE THE DIFFERENCE</span>
+        <h2 id="demo-title">Background noise,<br><em>under control.</em></h2>
+        <p>Windows can periodically search for nearby networks while you are already connected. That behavior may contribute to latency spikes on some systems. Penguin Anti-Scan asks Windows to stop until you need it.</p>
       </div>
 
-      <div class="steps">
-        <article class="step-card">
-          <span class="step-number">01</span>
-          <h3>Pick your adapter</h3>
-          <p>Select the Wi-Fi adapter you use. Penguin remembers it for next time.</p>
-        </article>
-        <article class="step-card featured">
-          <span class="step-number">02</span>
-          <h3>Background scans stop</h3>
-          <p>Once connected, periodic Windows scanning is disabled through the Native Wi-Fi API.</p>
-        </article>
-        <article class="step-card">
-          <span class="step-number">03</span>
-          <h3>Scan when you ask</h3>
-          <p>Open the Windows Wi-Fi panel when you want to look for networks. On-demand discovery remains available.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section split-section">
-      <div class="split-copy">
-        <span class="kicker">Honest little utility</span>
-        <h2>One job. No nonsense.</h2>
-        <p>Penguin Anti-Scan does not promise magical internet. It targets one possible source of Wi-Fi latency spikes: periodic background network scans.</p>
-        <ul class="check-list">
-          <li>Does not turn off the Wi-Fi radio</li>
-          <li>Does not intentionally disconnect your network</li>
-          <li>Does not install a custom driver or service</li>
-          <li>Restores normal scanning when you exit safely</li>
-        </ul>
-      </div>
-
-      <div class="terminal" aria-label="Example application status">
-        <div class="terminal-bar"><span></span><span></span><span></span><b>penguin-status</b></div>
-        <div class="terminal-body">
-          <p><span class="prompt">$</span> adapter</p>
-          <p class="response">Wi-Fi 3</p>
-          <p><span class="prompt">$</span> background_scan</p>
-          <p class="response success">disabled</p>
-          <p><span class="prompt">$</span> penguin</p>
-          <p class="response">on guard 🐧</p>
+      <div class="scan-console reveal" data-demo-state="protected">
+        <div class="console-topbar"><div class="console-title"><span></span> WLAN ACTIVITY MONITOR</div><div class="console-label">INTERACTIVE DEMO</div></div>
+        <div class="console-grid">
+          <div class="signal-view">
+            <div class="chart-labels"><span>60 ms</span><span>40 ms</span><span>20 ms</span><span>0 ms</span></div>
+            <div class="chart-grid" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+              <div class="latency-line">
+                <i style="--h:18%"></i><i style="--h:22%"></i><i style="--h:19%"></i><i style="--h:25%"></i><i style="--h:21%"></i><i class="scan-spike" style="--h:86%"></i><i style="--h:24%"></i><i style="--h:20%"></i><i style="--h:27%"></i><i style="--h:19%"></i><i class="scan-spike" style="--h:72%"></i><i style="--h:23%"></i><i style="--h:18%"></i><i style="--h:21%"></i><i style="--h:25%"></i><i class="scan-spike" style="--h:92%"></i><i style="--h:19%"></i><i style="--h:23%"></i>
+              </div>
+            </div>
+            <div class="chart-legend"><span><i></i> Latency</span><span class="scan-key"><i></i> Background scan</span></div>
+          </div>
+          <div class="demo-control">
+            <span class="control-kicker">BACKGROUND SCANNING</span>
+            <button class="guard-switch" type="button" data-demo-toggle aria-pressed="true">
+              <span class="switch-track"><i></i></span>
+              <span class="switch-copy"><strong data-demo-label>Blocked</strong><small data-demo-detail>Penguin is on guard</small></span>
+            </button>
+            <div class="adapter-row"><span>Adapter</span><strong>Wi-Fi 3</strong></div>
+            <p>This demo only explains the behavior. The actual setting is changed by the Windows app.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section faq" id="faq" aria-labelledby="faq-title">
-      <div class="section-heading compact">
-        <span class="kicker">Good questions</span>
-        <h2 id="faq-title">Before you let a penguin near your Wi-Fi</h2>
-      </div>
-      <div class="faq-grid">
-        <details>
-          <summary>Can it fix Wi-Fi ping spikes?</summary>
-          <p>It may help when the spikes come from periodic WLAN scans or roaming behavior. It cannot fix congestion, interference, weak signal, router issues, or bufferbloat.</p>
-        </details>
-        <details>
-          <summary>Why does it need administrator access?</summary>
-          <p>Windows restricts changes to wireless interface settings. The app requests elevation only when it starts.</p>
-        </details>
-        <details>
-          <summary>How do I know it is working?</summary>
-          <p>The green “Penguin on guard” state appears only after Windows reports that background scanning is disabled.</p>
-        </details>
-        <details>
-          <summary>What happens when I close the window?</summary>
-          <p>It stays active in the system tray. Choose “Exit and restore Wi-Fi” from the tray menu to quit and restore normal scanning.</p>
-        </details>
+    <section class="steps-section" aria-labelledby="steps-title">
+      <div class="steps-heading reveal"><span class="section-index">02 / THREE CLICKS, BASICALLY</span><h2 id="steps-title">Tiny utility.<br>Very specific job.</h2></div>
+      <div class="steps-list">
+        <article class="process-step reveal">
+          <div class="step-meta"><span>01</span><i></i></div><div class="step-icon adapter-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div><h3>Choose your adapter</h3><p>Select the Wi-Fi card you actually use. The choice is saved for the next launch.</p></div>
+        </article>
+        <article class="process-step reveal">
+          <div class="step-meta"><span>02</span><i></i></div><div class="step-icon shield-icon" aria-hidden="true">✦</div>
+          <div><h3>Let the penguin guard it</h3><p>The app requests the background-scan setting through the native Windows WLAN API.</p></div>
+        </article>
+        <article class="process-step reveal">
+          <div class="step-meta"><span>03</span><i></i></div><div class="step-icon tray-icon" aria-hidden="true"><span>▰</span></div>
+          <div><h3>Forget about the window</h3><p>Close it and the app stays in your system tray. Exit safely to restore normal behavior.</p></div>
+        </article>
       </div>
     </section>
 
-    <section class="final-cta">
-      <img src="assets/penguin-anti-scan.png" alt="" width="96" height="96">
-      <div>
-        <span class="kicker">Ready when you are</span>
-        <h2>Less scanning. More penguin.</h2>
+    <section class="truth-section" id="under-the-hood" aria-labelledby="truth-title">
+      <div class="truth-panel reveal">
+        <div class="truth-copy">
+          <span class="section-index">03 / NO SNAKE OIL</span>
+          <h2 id="truth-title">Not a “gaming optimizer.”<br><em>Just one honest fix.</em></h2>
+          <p>It will not magically improve your router, signal strength or ISP. It targets one possible cause of periodic Wi-Fi latency spikes and leaves the rest of your network alone.</p>
+          <a class="text-link" href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">Inspect every line on GitHub</a>
+        </div>
+        <div class="truth-grid">
+          <article><span class="truth-symbol yes">✓</span><strong>Native WLAN API</strong><small>No custom kernel driver</small></article>
+          <article><span class="truth-symbol yes">✓</span><strong>Portable</strong><small>One executable, no setup</small></article>
+          <article><span class="truth-symbol no">×</span><strong>No Wi-Fi shutdown</strong><small>Your radio stays connected</small></article>
+          <article><span class="truth-symbol no">×</span><strong>No fake promises</strong><small>It only handles scanning</small></article>
+        </div>
       </div>
-      <a class="button button-primary" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe">Download latest release</a>
+    </section>
+
+    <section class="spec-section reveal" aria-label="Application specifications">
+      <div><span>PACKAGE</span><strong>1 portable EXE</strong></div><div><span>PLATFORM</span><strong>Windows 10 / 11</strong></div><div><span>RUNTIME</span><strong>.NET Framework 4.8</strong></div><div><span>SOURCE</span><strong>Public on GitHub</strong></div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="faq-heading reveal"><span class="section-index">04 / READ BEFORE DEPLOYING PENGUIN</span><h2 id="faq-title">Questions worth asking.</h2></div>
+      <div class="faq-list reveal">
+        <details open><summary><span>01</span> Can it fix my Wi-Fi ping spikes?</summary><p>It may help when those spikes come from periodic WLAN scans or roaming behavior. It cannot fix congestion, interference, weak signal, router issues or bufferbloat.</p></details>
+        <details><summary><span>02</span> Why does it need administrator access?</summary><p>Windows restricts changes to wireless interface settings. The app asks for elevation when it starts so it can request that change.</p></details>
+        <details><summary><span>03</span> How do I know it is working?</summary><p>The “Penguin on guard” state appears only after Windows reports that background scanning is disabled for the selected adapter.</p></details>
+        <details><summary><span>04</span> How do I restore normal scanning?</summary><p>Choose “Exit and restore Wi-Fi” from the tray menu. The app restores the normal background-scan behavior before it quits.</p></details>
+      </div>
+    </section>
+
+    <section class="download-section reveal" aria-labelledby="download-title">
+      <div class="download-orbit" aria-hidden="true"></div><img src="assets/penguin-anti-scan.png" alt="" width="240" height="240">
+      <div class="download-copy"><span class="section-index">ENOUGH SCANNING</span><h2 id="download-title">Put the penguin<br>in your tray.</h2><p><span data-version>Latest release</span> · <span data-release-date>Portable for Windows</span></p></div>
+      <a class="button button-download final-download" data-download href="https://github.com/TH3AL3X/Pinguin-Anti-Scan/releases/latest/download/PenguinAntiScan.exe"><span>Download Penguin Anti-Scan</span><small>PenguinAntiScan.exe</small></a>
     </section>
   </main>
 
   <footer>
-    <div class="brand footer-brand">
-      <img src="assets/penguin-anti-scan.png" alt="" width="34" height="34">
-      <span>Penguin Anti-Scan</span>
-    </div>
-    <p>Built for Windows. Open source on <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">GitHub</a>.</p>
+    <a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark"><img src="assets/penguin-anti-scan.png" alt="" width="34" height="34"></span><span class="brand-copy"><strong>Penguin</strong><small>Anti-Scan</small></span></a>
+    <p>Built by <a href="https://github.com/TH3AL3X" target="_blank" rel="noreferrer">TH3AL3X</a>. Source available, because network tools should not be mysterious.</p>
+    <a href="https://github.com/TH3AL3X/Pinguin-Anti-Scan" target="_blank" rel="noreferrer">Source code</a>
   </footer>
 
   <script src="site.js"></script>
